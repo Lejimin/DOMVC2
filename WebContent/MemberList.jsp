@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <style>
@@ -39,33 +40,24 @@
         <div id="contdiv">
 			<center>
 				<h2> 회원 리스트 </h2>
-				
-					<table width="400" border="1" bordercolor="gray">
-						<tr height="40">
-							<td width="150" align="center"> 아이디 </td>
-							<td width="250" align="center">${bean.id }</td>
-						</tr>
-						<tr height="40">
-							<td width="150" align="center"> 패스워드1 </td>
-							<td width="250" align="center">${bean.password1 }</td>
-						</tr>
-						<tr height="40">
-							<td width="150" align="center"> 패스워드2 </td>
-							<td width="250" align="center">${bean.password2 }</td>
-						</tr>
-						<tr height="40">
-							<td width="150" align="center"> 이름 </td>
-							<td width="250" align="center">${bean.name }</td>
-						</tr>
-						<tr height="40">
-							<td width="150" align="center"> 이메일 </td>
-							<td width="250" align="center">${bean.email }</td>
-						</tr>
-						<tr height="40">
-							<td width="150" align="center"> 주소 </td>
-							<td width="250" align="center">${bean.address }</td>
-						</tr>
-					</table>
+						
+				<table width="800" border="1" bordercolors="gray">
+					<tr height ="40">
+						<td align="center" width="50"> 아이디 </td>
+						<td align="center" width="50"> 이름 </td>
+						<td align="center" width="150"> 이메일 </td>
+						<td align="center" width="150"> 주소 </td>
+					</tr>
+					
+				<c:forEach var='v' items="${v }">
+					<tr height ="40">
+						<td align="center" width="50">${bean.id }</td>
+						<td align="center" width="50">${bean.name }</td>
+						<td align="center" width="150"><a href="#">${bean.email }</a></td>
+						<td align="center" width="150">${bean.address }</td>
+					</tr>
+				</c:forEach>
+				</table>
 			</center>
         </div>
     </div>

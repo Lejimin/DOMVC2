@@ -3,6 +3,7 @@ package Model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Vector;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -18,8 +19,7 @@ public class MemberDAO {
 		try {
 			
 			Context initctx = new InitialContext();
-			Context envctx = (Context)initctx.lookup("java:comp/env");
-			DataSource ds = (DataSource) envctx.lookup("jdbc/mysql");
+			DataSource ds = (DataSource)initctx.lookup("java:comp/env/jdbc/mysql");
 			con = ds.getConnection();
 			
 		} catch (Exception e) {
@@ -50,8 +50,34 @@ public class MemberDAO {
 	}
 	
 	
-	
-	
+	//모든 회원의 정보 리턴
+	public Vector<MemberBean> getAllMember(){
+		
+		Vector<MemberBean> v = new Vector<>();
+		
+		getCon();
+		
+		try {
+			String sql = "select * from jointbl";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MemberBean bean = new MemberBean();
+				bean.setId(rs.getString("id"));
+				bean.setPassword1(rs.getString("password1"));
+				bean.setName(rs.getString("name"));
+				bean.setEmail(rs.getString("email"));
+				bean.setAddress(rs.getString("address"));
+				v.add(bean);
+			}
+			con.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return v;
+	}
 	
 	
 }

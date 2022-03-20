@@ -53,7 +53,7 @@ public class MemberJoinProc extends HttpServlet {
 			MemberDAO mdao = new MemberDAO();
 			mdao.insertMember(bean);
 			
-			RequestDispatcher dis = request.getRequestDispatcher("MemberList.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("/MemberListCon.do");
 			dis.forward(request, response);
 		}else {
 			request.setAttribute("msg", "패스워드가 일치하지 않습니다.");
