@@ -39,23 +39,27 @@
         <div id="contdiv">
 			<center>
 				<h2> 회원 가입 양식 </h2>
-				<form action="Mproc" method="post">
+				<form action="Mproc.do" method="post">
 					<table width="400" border="1" bordercolor="gray">
 						<tr height="40">
 							<td width="150" align="center"> 아이디 </td>
 							<td width="250"><input type="text" name="id"></td>
 						</tr>
 						<tr height="40">
-							<td width="150" align="center"> 패스워드 </td>
-							<td width="250"><input type="password" name="password"></td>
+							<td width="150" align="center"> 패스워드1 </td>
+							<td width="250"><input type="password" name="password1"></td>
+						</tr>
+						<tr height="40">
+							<td width="150" align="center"> 패스워드2 </td>
+							<td width="250"><input type="password" name="password2"></td>
+						</tr>
+						<tr height="40">
+							<td width="150" align="center"> 이름 </td>
+							<td width="250"><input type="text" name="name"></td>
 						</tr>
 						<tr height="40">
 							<td width="150" align="center"> 이메일 </td>
 							<td width="250"><input type="email" name="email"></td>
-						</tr>
-						<tr height="40">
-							<td width="150" align="center"> 전화 </td>
-							<td width="250"><input type="tel" name="tel"></td>
 						</tr>
 						<tr height="40">
 							<td width="150" align="center"> 주소 </td>
