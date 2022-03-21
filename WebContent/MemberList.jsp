@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <style>
@@ -48,8 +48,7 @@
 						<td align="center" width="150"> 이메일 </td>
 						<td align="center" width="150"> 주소 </td>
 					</tr>
-					
-				<c:forEach var='v' items="${v }">
+				<c:forEach var="v" items="${v }">
 					<tr height ="40">
 						<td align="center" width="50">${bean.id }</td>
 						<td align="center" width="50">${bean.name }</td>
