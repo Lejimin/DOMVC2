@@ -110,7 +110,7 @@ public class BoardDAO {
 				ref = rs.getInt(1)+1;//�ִ� ���� +1�� ���ؼ� �� �׷��� ����	
 			}
 			//������ �Խñ� ��ü���� ���̺��� ���� 
-			String SQL = "insert into board values(board_seq.NEXTVAL,?,?,?,?,sysdate(),?,?,?,0,?)";
+			String SQL = "insert into board values(?,?,?,?,sysdate(),?,?,?,0,?)";
 			pstmt = con.prepareStatement(SQL);
 			//?�� ���� ����
 			pstmt.setString(1, bean.getWrite());
@@ -195,7 +195,7 @@ public class BoardDAO {
 				//���� ���� 
 				pstmt.executeUpdate();
 				//�亯�� �����͸� ����
-				String sql ="insert into board values(board_seq.NEXTVAL,?,?,?,?,sysdate(),?,?,?,0,?)";
+				String sql ="insert into board values(?,?,?,?,sysdate(),?,?,?,0,?)";
 				pstmt = con.prepareStatement(sql);
 				//?�� ���� ����
 				pstmt.setString(1, bean.getWrite());
