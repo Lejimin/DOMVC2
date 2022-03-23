@@ -50,10 +50,10 @@
 					</tr>
 				<c:forEach var="v" items="${v }">
 					<tr height ="40">
-						<td align="center" width="50">${bean.id }</td>
-						<td align="center" width="50">${bean.name }</td>
-						<td align="center" width="150"><a href="#">${bean.email }</a></td>
-						<td align="center" width="150">${bean.address }</td>
+						<td align="center" width="50">${v.id }</td>
+						<td align="center" width="50">${v.name }</td>
+						<td align="center" width="150"><a href="#">${v.email }</a></td>
+						<td align="center" width="150">${v.address }</td>
 					</tr>
 				</c:forEach>
 				</table>
