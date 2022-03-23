@@ -35,12 +35,12 @@ public class MemberDAO {
 		try {
 			String sql = "insert into jointbl values (?,?,?,?,?,?)";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setNString(1, bean.getId());
-			pstmt.setNString(2, bean.getPassword1());
-			pstmt.setNString(3, bean.getPassword2());
-			pstmt.setNString(4, bean.getName());
-			pstmt.setNString(5, bean.getEmail());
-			pstmt.setNString(6, bean.getAddress());
+			pstmt.setString(1, bean.getId());
+			pstmt.setString(2, bean.getPassword1());
+			pstmt.setString(3, bean.getPassword2());
+			pstmt.setString(4, bean.getName());
+			pstmt.setString(5, bean.getEmail());
+			pstmt.setString(6, bean.getAddress());
 			
 			pstmt.executeUpdate();
 			con.close();
